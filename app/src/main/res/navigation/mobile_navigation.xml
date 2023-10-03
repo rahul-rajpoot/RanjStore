@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.alps.ranjstore.dashboard.ui.gallery.GalleryFragment"
+        android:name="com.alps.ranjstore.dashboard.ui.wallet.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.alps.ranjstore.dashboard.ui.slideshow.SlideshowFragment"
+        android:name="com.alps.ranjstore.dashboard.ui.profile.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

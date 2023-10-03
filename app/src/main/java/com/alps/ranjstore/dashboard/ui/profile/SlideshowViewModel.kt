@@ -1,4 +1,4 @@
-package com.alps.ranjstore.dashboard.ui.slideshow
+package com.alps.ranjstore.dashboard.ui.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

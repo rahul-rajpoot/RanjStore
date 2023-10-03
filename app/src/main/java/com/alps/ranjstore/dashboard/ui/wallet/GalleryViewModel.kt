@@ -1,4 +1,4 @@
-package com.alps.ranjstore.dashboard.ui.gallery
+package com.alps.ranjstore.dashboard.ui.wallet
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
