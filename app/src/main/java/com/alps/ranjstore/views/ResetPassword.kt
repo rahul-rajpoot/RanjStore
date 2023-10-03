@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alps.ranjstore.com.alps.ranjstore.net.ImplApiServices
 import com.alps.ranjstore.com.alps.ranjstore.repository.ResetRepository
@@ -45,6 +47,11 @@ class ResetPassword : AppCompatActivity() {
         resetpasswordBinding.restbt.setOnClickListener {
             resetpassword()
         }
+
+        resetViewModel.validate().observe(this, Observer {
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        })
+
     }
 
     private fun resetpassword() {

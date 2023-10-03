@@ -4,9 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.alps.ranjstore.R
 import com.alps.ranjstore.com.alps.ranjstore.net.ImplApiServices
 import com.alps.ranjstore.com.alps.ranjstore.viewmodel.login.LoginViewModel
 import com.alps.ranjstore.com.alps.ranjstore.viewmodel.login.LoginViewModelFactory
@@ -18,6 +24,8 @@ import com.alps.ranjstore.views.SignUpActivity
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginBinding
     private lateinit var loginViewModel: LoginViewModel
+    var passwordVisible: Boolean = false
+    var checkBoxVisible: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +52,13 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        loginViewModel.validate().observe(this, Observer {
+            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        })
+
+
+
     }
 
 
@@ -53,43 +68,59 @@ class LoginActivity : AppCompatActivity() {
 
             val password =  loginBinding.password1.text.toString().trim()
 
-           /* tv_pwd_confirm.setOnTouchListener(object : View.OnTouchListener {
+            val checkbox =  loginBinding.enable.text.toString().trim()
+
+            val bolean = checkbox.toBoolean()
+
+            Log.e( "login: ", bolean.toString())
+            if(bolean.or(checkBoxVisible))
+            //    Toast.makeText(this, "it", Toast.LENGTH_LONG).show()
+
+
+            loginBinding.password1.setOnTouchListener(object : View.OnTouchListener {
                 override fun onTouch(view: View?, event: MotionEvent): Boolean {
                     val Right = 2
                     if (event.getAction() === MotionEvent.ACTION_UP) {
-                        if (event.getRawX() >= tv_pwd_confirm.getRight() - tv_pwd_confirm.getCompoundDrawables()
+                        if (event.getRawX() >=  loginBinding.password1.getRight() -    loginBinding.password1.getCompoundDrawables()
                                 .get(Right).getBounds().width()
                         ) {
-                            val selection: Int = tv_pwd_confirm.getSelectionEnd()
+                            val selection: Int =  loginBinding.password1.getSelectionEnd()
                             if (passwordVisible) {
-                                tv_pwd_confirm.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                                loginBinding.password1.setCompoundDrawablesRelativeWithIntrinsicBounds(
                                     0,
                                     0,
-                                    R.drawable.ic_baseline_visibility_off_24,
+                                    R.drawable.baseline_visibility_off_24,
                                     0
                                 )
-                                tv_pwd_confirm.setTransformationMethod(PasswordTransformationMethod.getInstance())
+                                loginBinding.password1.setTransformationMethod(
+                                    PasswordTransformationMethod.getInstance())
                                 passwordVisible = false
                             } else {
-                                tv_pwd_confirm.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                                loginBinding.password1.setCompoundDrawablesRelativeWithIntrinsicBounds(
                                     0,
                                     0,
-                                    R.drawable.ic_baseline_visibility_24,
+                                    R.drawable.baseline_visibility_24,
                                     0
                                 )
-                                tv_pwd_confirm.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+                                loginBinding.password1.setTransformationMethod(
+                                    HideReturnsTransformationMethod.getInstance())
                                 passwordVisible = true
                             }
-                            tv_pwd_confirm.setSelection(selection)
+                            loginBinding.password1.setSelection(selection)
                             return true
                         }
                     }
                     return false
                 }
-            })*/
+            })
 
             loginViewModel.loginView(username,password)
         }
+
+
+      fun  hidepassword(){
+
+      }
 
 
     }
