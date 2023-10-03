@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RanjStore</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">UserName</string>
+    <string name="nav_header_subtitle">pramodkumarp6@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!--    <String name="algin">Affiliate Login</String>-->
+    <string name="menu_home">DashBoard</string>
+    <string name="menu_gallery">Profile</string>
+    <string name="menu_slideshow">Password</string>
+    <string name="text_front">Login</string>
+    <string name="text_Next">Next</string>
+    <string name="skip_intro">SKIP INTRO</string>
+</resources>
