@@ -5,21 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".dashboard.ui.shop.CartActivity">
+    tools:context=".dashboard.ui.profile.ProfileUpdateActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_primary"
-        app:title="CartActivity"
+        app:title="ProfileActivity"
         app:titleTextColor="#ffff"
         app:popupTheme="@style/Theme.RanjStore.PopupOverlay" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="250dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="70dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_shopping_cart_24"/>
+        android:src="@drawable/sharukhan"
+        app:civ_border_color="#FF000000"
+
+        app:civ_border_width="2dp"
+        tools:ignore="MissingConstraints" />
 
 </LinearLayout>

@@ -8,15 +8,15 @@
         app:showAsAction="never" />-->
 
     <item
-        android:id="@+id/menuLogout121"
+        android:id="@+id/cart"
         android:orderInCategory="100"
-        android:icon="@drawable/baseline_shopping_cart_24"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
 
-        android:title="notification"
+        android:title="Cart"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menuLogout1212"
+        android:id="@+id/notifications"
         android:orderInCategory="100"
         android:icon="@drawable/baseline_notification_add_24"
 

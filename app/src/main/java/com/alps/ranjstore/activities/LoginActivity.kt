@@ -35,6 +35,8 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel =  ViewModelProvider(this, LoginViewModelFactory(LoginRepository(ImplApiServices()))).get(LoginViewModel::class.java)
         loginBinding.sumbit.setOnClickListener { view ->
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
 
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_loading)
@@ -43,8 +45,6 @@ class LoginActivity : AppCompatActivity() {
                 dialog!!.window!!.setBackgroundDrawable(ColorDrawable(0))
             }
             dialog.show()
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
 
             login()
         }
