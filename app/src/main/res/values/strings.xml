@@ -11,8 +11,8 @@
 
     <!--    <String name="algin">Affiliate Login</String>-->
     <string name="menu_home">DashBoard</string>
-    <string name="menu_gallery">Profile</string>
-    <string name="menu_slideshow">Password</string>
+    <string name="menu_gallery">Shop</string>
+    <string name="menu_slideshow">Reward</string>
     <string name="text_front">Login</string>
     <string name="text_Next">Next</string>
     <string name="skip_intro">SKIP INTRO</string>

@@ -1,4 +1,4 @@
-package com.alps.ranjstore.views
+package com.alps.ranjstore.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,10 +21,10 @@ class SignUpActivity : AppCompatActivity() {
         ))).get(RegisterViewModel::class.java)
 
 
-        signUpBinding.sumbit.setOnClickListener {
+        /*signUpBinding.sumbit.setOnClickListener {
 
             registerView()
-        }
+        }*/
     }
 
     private fun registerView() {

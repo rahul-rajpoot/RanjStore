@@ -6,199 +6,413 @@
 
     android:layout_height="match_parent">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff"
-    tools:context="com.alps.ranjstore.views.SignUpActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentStart="true"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        tools:context="com.alps.ranjstore.activities.SignUpActivity">
 
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:background="@drawable/shape2" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/layout_marginLeft"
-        android:layout_marginTop="@dimen/layout_marginTop"
-        android:layout_marginRight="@dimen/layout_marginRight"
-        android:layout_marginBottom="20dp"
-        android:elevation="50dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="28dp">
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="234dp"
-            android:orientation="vertical"
-            android:padding="28dp">
+            android:layout_height="250dp"
+            android:layout_alignParentStart="true"
 
-            <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/shape2" />
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sponsor Details"
-                android:textAlignment="center"
-                android:textColor="@color/text_colors"
-                android:textSize="@dimen/front_title"
-
-                android:textStyle="bold" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="30dp" />
-            <!--<TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="User Name"
-                android:alpha="0.7"
-                android:textStyle="bold"/>
--->
-            <AutoCompleteTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_edit"
-                android:drawableLeft="@drawable/baseline_person_search_24"
-                android:drawablePadding="10dp"
-                android:hint="Sponsor Username"
-                android:inputType="textEmailAddress"
-                android:padding="12dp"
-                android:singleLine="true" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-            <!--  <TextView
-
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="Password"
-                  android:alpha="0.7"
-                  android:textStyle="bold"/>
-  -->
-            <EditText
-                android:id="@+id/passs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_edit"
-                android:drawableLeft="@drawable/ic_person"
-                android:drawablePadding="10dp"
-                android:hint="Sponsor Name"
-                android:inputType="textPersonName"
-                android:padding="12dp"
-                android:singleLine="true" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="25dp" />
-
-            <!--  <com.google.android.material.button.MaterialButton
-                android:id="@+id/sumbit"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="#0f7abf"
-                android:textAllCaps="false"
-                android:text="SUBMIT"
-                android:textSize="@dimen/button_Size"
-
-                app:cornerRadius="32dp" />
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/move_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:alpha="0.7"
-                android:text="Already Have an Account"
-                android:textColor="@color/text_colors" />
--->
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="@dimen/layout_marginLeft"
-        android:layout_marginTop="450dp"
-        android:layout_marginRight="@dimen/layout_marginRight"
-        android:layout_marginBottom="20dp"
-        android:elevation="500dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="28dp">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginTop="@dimen/layout_marginTop"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:layout_marginBottom="20dp"
+            android:elevation="50dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="234dp"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sponsor Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_colors"
+                    android:textSize="@dimen/front_title"
+
+                    android:textStyle="bold" />
 
 
-            android:paddingTop="10dp">
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    android:alpha="0.7"
+                    android:textStyle="bold"/>
+    -->
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_edit"
+                    android:drawableLeft="@drawable/baseline_person_search_24"
+                    android:drawablePadding="10dp"
+                    android:hint="Sponsor Username"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <!--  <TextView
+
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Password"
+                      android:alpha="0.7"
+                      android:textStyle="bold"/>
+      -->
+                <EditText
+                    android:id="@+id/passs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_edit"
+                    android:drawableLeft="@drawable/ic_person"
+                    android:drawablePadding="10dp"
+                    android:hint="Sponsor Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
 
 
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
 
-            <Button
-                android:id="@+id/sumbit"
-                android:layout_width="50dp"
+                <!--  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sumbit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0f7abf"
+                    android:textAllCaps="false"
+                    android:text="SUBMIT"
+                    android:textSize="@dimen/button_Size"
 
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/move_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="0.7"
+                    android:text="Already Have an Account"
+                    android:textColor="@color/text_colors" />
+    -->
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginTop="450dp"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:layout_marginBottom="20dp"
+            android:elevation="50dp"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="28dp">
 
-                android:backgroundTint="#0f7abf"
-                android:text="SUBMIT "
-                android:textColor="@color/white"
-                android:textSize="19sp" />
+                <TextView
 
-            <Button
-                android:id="@+id/textViewRegister2"
-                android:layout_width="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Person Details"
+
+                    android:textColor="@color/text_colors"
+                    android:textSize="@dimen/front_title"
+
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+
+                    android:hint="FirstName"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+
+                <EditText
+                    android:id="@+id/passs3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="LastName"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint=" Select Gender"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+
+                <EditText
+                    android:id="@+id/DateofBirith"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="DOB"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+
+                <EditText
+                    android:id="@+id/fathername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="FatherName Or Husbandname"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="Email Address"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <EditText
+                    android:id="@+id/email1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="Pan Card"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <EditText
+                    android:id="@+id/adher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="Adher Card"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <EditText
+                    android:id="@+id/NameNi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="Nominee Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp" />
+
+                <EditText
+                    android:id="@+id/Named"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_style"
+                    android:drawablePadding="10dp"
+                    android:hint="Nominee Relation"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:singleLine="true" />
+
+
+                <!--  <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sumbit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#0f7abf"
+                    android:textAllCaps="false"
+                    android:text="SUBMIT"
+                    android:textSize="@dimen/button_Size"
+
+                    app:cornerRadius="32dp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/move_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:alpha="0.7"
+                    android:text="Already Have an Account"
+                    android:textColor="@color/text_colors" />
+    -->
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+     <!--   <androidx.cardview.widget.CardView
+            android:id="@+id/card_view1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="@dimen/layout_marginLeft"
+            android:layout_marginTop="1500dp"
+            android:layout_marginRight="@dimen/layout_marginRight"
+            android:layout_marginBottom="20dp"
+            android:elevation="500dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:backgroundTint="#0f7abf"
-                android:text="RESET"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/textViewRegister"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:backgroundTint="#0f7abf"
-                android:text="CANCEL "
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
+                android:layout_marginTop="3dp"
+                android:orientation="vertical"
+                android:paddingTop="28dp">
 
 
-    </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/sumbit"
+
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#0f7abf"
+                    android:textAllCaps="false"
+                    android:text="SUBMIT"
+                    android:textSize="@dimen/button_Size"
+
+                    app:cornerRadius="32dp" />
+
+                &lt;!&ndash; <Button
+                         android:id="@+id/textViewRegister2"
+                         android:layout_width="50dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+
+                         android:backgroundTint="#0f7abf"
+                         android:text="RESET"
+                         android:textColor="@color/white"
+                         android:textSize="20sp" />
+
+                     <Button
+                         android:id="@+id/textViewRegister"
+                         android:layout_width="50dp"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+
+                         android:backgroundTint="#0f7abf"
+                         android:text="CANCEL "
+                         android:textColor="@color/white"
+                         android:textSize="18sp" />&ndash;&gt;
+            </LinearLayout>
 
 
-</RelativeLayout>
+        </androidx.cardview.widget.CardView>
+-->
+
+    </RelativeLayout>
 </ScrollView>

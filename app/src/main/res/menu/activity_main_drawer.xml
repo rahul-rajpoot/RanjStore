@@ -11,11 +11,31 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/baseline_person_outline_24"
+            android:icon="@drawable/ic_shopping_cart_24"
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/password_icon"
+            android:icon="@drawable/ic_reward"
             android:title="@string/menu_slideshow" />
+
+        <item
+            android:id="@+id/nav_slideshow1"
+            android:icon="@drawable/walleticonss"
+            android:title="Wallet Histry" />
+
+        <item
+            android:id="@+id/nav_slideshow2"
+            android:icon="@drawable/financial_report"
+            android:title="Finicial Report" />
+
+        <item
+            android:id="@+id/nav_slideshow3"
+            android:icon="@drawable/customer_support"
+            android:title="Customer Support" />
+
+        <item
+            android:id="@+id/Logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
     </group>
 </menu>

@@ -1,6 +1,8 @@
-package com.alps.ranjstore.com.alps.ranjstore.views
+package com.alps.ranjstore.activities
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,12 +10,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.alps.ranjstore.R
 import com.alps.ranjstore.com.alps.ranjstore.net.ImplApiServices
 import com.alps.ranjstore.com.alps.ranjstore.repository.ResetRepository
 import com.alps.ranjstore.com.alps.ranjstore.viewmodel.resetpassword.ResetViewModel
 import com.alps.ranjstore.com.alps.ranjstore.viewmodel.resetpassword.ResetViewModelfactory
 import com.alps.ranjstore.databinding.ActivityResetPasswordBinding
-import com.alps.ranjstore.views.SignUpActivity
 
 
 class ResetPassword : AppCompatActivity() {
@@ -45,6 +47,14 @@ class ResetPassword : AppCompatActivity() {
         })
 
         resetpasswordBinding.restbt.setOnClickListener {
+
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_loading)
+            //  dialog.setCancelable(false)
+            if(dialog.window !=null){
+                dialog!!.window!!.setBackgroundDrawable(ColorDrawable(0))
+            }
+            dialog.show()
             resetpassword()
         }
 

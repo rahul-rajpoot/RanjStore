@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-  <!--  <item
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />-->
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuLogout121"
+        android:orderInCategory="100"
+        android:icon="@drawable/baseline_shopping_cart_24"
+
+        android:title="notification"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menuLogout1212"
+        android:orderInCategory="100"
+        android:icon="@drawable/baseline_notification_add_24"
+
+        android:title="notification"
+        app:showAsAction="always" />
 </menu>

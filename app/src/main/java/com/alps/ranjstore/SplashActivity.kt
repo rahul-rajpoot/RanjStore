@@ -14,7 +14,7 @@ import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.alps.ranjstore.com.alps.ranjstore.adapter.IntroSliderAdapter
 import com.alps.ranjstore.com.alps.ranjstore.model.splash.IntroSlide
-import com.alps.ranjstore.com.alps.ranjstore.views.LoginActivity
+import com.alps.ranjstore.activities.LoginActivity
 import com.alps.ranjstore.databinding.ActivitySplashBinding
 
 @Suppress("DEPRECATION")
