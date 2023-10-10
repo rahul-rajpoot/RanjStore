@@ -31,7 +31,10 @@ class ResetPassword : AppCompatActivity() {
         setContentView(resetpasswordBinding.root)
        resetViewModel = ViewModelProvider(this,ResetViewModelfactory(ResetRepository(ImplApiServices()))).get(ResetViewModel::class.java)
 
+        resetpasswordBinding.backbton.setOnClickListener {
 
+            finish()
+        }
 
         resetpasswordBinding.login.setOnClickListener {
             val i = Intent(this@ResetPassword, LoginActivity::class.java)

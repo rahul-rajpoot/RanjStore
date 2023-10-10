@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
          binding.navView.getHeaderView(0)
 
         val textusername = view.findViewById<TextView>(R.id.profile)
-        textusername.setText("Pramod")
+        textusername.setText("Pramodkumarp6")
         textusername.setOnClickListener {
             val intent = Intent(MainActivity@this,ProfileUpdateActivity::class.java)
             startActivity(intent)

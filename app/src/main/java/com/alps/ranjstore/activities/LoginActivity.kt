@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -12,6 +11,7 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.alps.ranjstore.R
@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel =  ViewModelProvider(this, LoginViewModelFactory(LoginRepository(ImplApiServices()))).get(LoginViewModel::class.java)
         loginBinding.sumbit.setOnClickListener { view ->
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
 
             val dialog = Dialog(this)
@@ -87,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
             //    Toast.makeText(this, "it", Toast.LENGTH_LONG).show()
 
 
-            loginBinding.password1.setOnTouchListener(object : View.OnTouchListener {
+             loginBinding.password1.setOnTouchListener(object : View.OnTouchListener {
                 override fun onTouch(view: View?, event: MotionEvent): Boolean {
                     val Right = 2
                     if (event.getAction() === MotionEvent.ACTION_UP) {

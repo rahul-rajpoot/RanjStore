@@ -6,7 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.alps.ranjstore.R
-import com.alps.ranjstore.databinding.ActivityProfileBinding
+
 import com.alps.ranjstore.databinding.ActivityProfileUpdateBinding
 
 class ProfileUpdateActivity : AppCompatActivity() {
@@ -20,9 +20,17 @@ class ProfileUpdateActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         getSupportActionBar()?.setDisplayShowHomeEnabled(true);
-        //getSupportActionBar()?.setTitle("CartActivity");
+        getSupportActionBar()?.setTitle("ProfileUpdateActivity");
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
-        // getSupportActionBar()>.setDisplayUseLogoEnabled(true);
+        /*getSupportActionBar()?.setLogo(R.drawable.baseline_arrow_back_ios_new_24);*/
+         getSupportActionBar()?.setDisplayUseLogoEnabled(true);
+       /* binding.backbton.setOnClickListener {
+
+            finish()
+        }*/
+
+
+
 
     }
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {

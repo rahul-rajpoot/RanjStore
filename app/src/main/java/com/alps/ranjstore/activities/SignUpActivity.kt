@@ -14,19 +14,27 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var registerviewModel: RegisterViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        signUpBinding =ActivitySignUpBinding.inflate(layoutInflater)
+        signUpBinding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(signUpBinding.root)
-        registerviewModel = ViewModelProvider(this,RegisterViewModelFactory(RegisterRepository(
-            ImplApiServices()
-        ))).get(RegisterViewModel::class.java)
+        registerviewModel = ViewModelProvider(
+            this, RegisterViewModelFactory(
+                RegisterRepository(
+                    ImplApiServices()
+                )
+            )
+        ).get(RegisterViewModel::class.java)
 
-
-        /*signUpBinding.sumbit.setOnClickListener {
+/*
+        signUpBinding.submit.setOnClickListener {
 
             registerView()
         }*/
-    }
 
+        signUpBinding.backbton.setOnClickListener {
+
+            finish()
+        }
+    }
     private fun registerView() {
     }
 }
