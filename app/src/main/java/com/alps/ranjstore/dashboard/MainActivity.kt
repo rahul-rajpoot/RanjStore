@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,7 +23,7 @@ import com.alps.ranjstore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -38,21 +41,17 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
 
         val view = binding.navView.getHeaderView(0)
-         binding.navView.getHeaderView(0)
+        binding.navView.getHeaderView(0)
 
         val textusername = view.findViewById<TextView>(R.id.profile)
         textusername.setText("Pramodkumarp6")
         textusername.setOnClickListener {
-            val intent = Intent(MainActivity@this,ProfileUpdateActivity::class.java)
+            val intent = Intent(MainActivity@ this, ProfileUpdateActivity::class.java)
             startActivity(intent)
         }
 
 
-
-
-
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+       /* val navController = findNavController(R.id.nav_host_fragment_content_main)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -60,7 +59,13 @@ class MainActivity : AppCompatActivity() {
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        navView.setupWithNavController(navController)*/
+
+        val toggle = ActionBarDrawerToggle(
+            this, drawerLayout, binding.appBarMain.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -69,30 +74,53 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+   /* override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.cart -> {
-                val   intent = Intent(this@MainActivity, CartActivity::class.java)
+                val intent = Intent(this@MainActivity, CartActivity::class.java)
                 startActivity(intent)
                 true
             }
-            R.id.notifications ->{
+
+            R.id.notifications -> {
                 intent = Intent(this@MainActivity, NotificationActivity::class.java)
                 startActivity(intent)
                 return true
             }
-            /*R.id.action_exit ->{
+            *//*R.id.action_exit ->{
                 Toast.makeText(applicationContext, "click on exit", Toast.LENGTH_LONG).show()
                 return true
-            }*/
+            }*//*
             else -> super.onOptionsItemSelected(item)
         }
+    }*/
+
+    override fun onBackPressed() {
+        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+    private fun displaySelectedScreen(itemId: Int) {
+        when (itemId) {
+            /* R.id.document -> {
+                 val docu = Intent(this, Document_View::class.java)
+                 startActivity(docu)
+             }*/
+
+        }
+        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        drawer.closeDrawer(GravityCompat.START)
     }
 
-
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        TODO("Not yet implemented")
     }
 }
+
+    /*override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }*/

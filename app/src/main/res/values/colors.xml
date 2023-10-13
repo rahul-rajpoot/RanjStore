@@ -6,11 +6,12 @@
     <color name="button_color">#1E9FF2</color>
     <color name="text_colors">#0f7abf</color>
     <color name="bckground_tint">#f4f4f4</color>
-
-
+    <color name="blue_color">#135ff4</color>-->
+    <color name="colorBlack">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF5252</color>
     <color name="colorTextPrimary">#212121</color>
     <color name="colorTextSecondary">#757575</color>
+    <color name="drawer_green_bg">#FAF3F3</color>
 </resources>
