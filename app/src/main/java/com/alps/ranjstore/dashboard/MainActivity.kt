@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import com.alps.ranjstore.R
 import com.alps.ranjstore.activities.LoginActivity
 import com.alps.ranjstore.dashboard.ui.profile.ProfileUpdateActivity
+import com.alps.ranjstore.dashboard.ui.shop.CartActivity
 import com.alps.ranjstore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         linearoutdashfooter4 = findViewById(R.id.linearoutdashfooter4)
         linearoutdashfooter5 = findViewById(R.id.linearoutdashfooter5)
         linearoutdashfooter1!!.setOnClickListener {
-            val intent = Intent(MainActivity@ this, ProfileUpdateActivity::class.java)
+            val intent = Intent(MainActivity@ this, CartActivity::class.java)
             startActivity(intent)
         }
 
@@ -73,15 +74,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-        /* val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-         appBarConfiguration = AppBarConfiguration(
-             setOf(
-                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-             ), drawerLayout
-         )
-         setupActionBarWithNavController(navController, appBarConfiguration)
-         navView.setupWithNavController(navController)*/
 
         val toggle = ActionBarDrawerToggle(
             this,

@@ -15,11 +15,11 @@
         android:title="Cart"
         app:showAsAction="always" />
 -->
-    <!--<item
+    <item
         android:id="@+id/notifications"
         android:orderInCategory="100"
-        android:icon="@drawable/baseline_notification_add_24"
+        android:icon="@drawable/baseline_search_24"
 
         android:title="notification"
-        app:showAsAction="always" />-->
+        app:showAsAction="always" />
 </menu>
