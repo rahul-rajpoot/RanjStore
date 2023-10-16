@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="myteamcolor">#212026</color>
+    <color name="walletpriscolor">#DD1D22</color>
+    <color name="teamsizcolor">#6a6464</color>
+    <color name="menu_blue">#DD1D22</color>
+    <color name="gray_color">#b3b3b3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_primary">#1084b5</color>

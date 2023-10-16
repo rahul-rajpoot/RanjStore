@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dashboard.ui.profile.ProfileActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_primary"
-        app:popupTheme="@style/Theme.RanjStore.PopupOverlay"
-        tools:ignore="MissingConstraints" />
+    tools:context=".dashboard.WhishListActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,11 @@ class LoginActivity : AppCompatActivity() {
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
 
+        loginBinding.backbton.setOnClickListener {
+
+            finish()
+        }
+
         loginViewModel =  ViewModelProvider(this, LoginViewModelFactory(LoginRepository(ImplApiServices()))).get(LoginViewModel::class.java)
         loginBinding.sumbit.setOnClickListener { view ->
             val intent = Intent(this@LoginActivity, MainActivity::class.java)

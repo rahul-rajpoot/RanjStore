@@ -15,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.alps.ranjstore.com.alps.ranjstore.adapter.IntroSliderAdapter
 import com.alps.ranjstore.com.alps.ranjstore.model.splash.IntroSlide
 import com.alps.ranjstore.activities.LoginActivity
+import com.alps.ranjstore.dashboard.MainActivity
 import com.alps.ranjstore.databinding.ActivitySplashBinding
 
 @Suppress("DEPRECATION")
@@ -62,7 +63,7 @@ class SplashActivity : AppCompatActivity() {
             if (binding.introSliderViewPager.currentItem + 1 < introSliderAdapter.itemCount) {
                 binding.introSliderViewPager.currentItem +=1
             }else{
-                Intent(applicationContext, LoginActivity:: class.java).also {
+                Intent(applicationContext, MainActivity:: class.java).also {
                     startActivity(it)
                     finish()
                 }
@@ -71,7 +72,7 @@ class SplashActivity : AppCompatActivity() {
 
         binding. textSkipIntro.setOnClickListener {
 
-         Intent(applicationContext, LoginActivity::class.java).also {
+         Intent(applicationContext, MainActivity::class.java).also {
                 startActivity(it)
                 finish()
             }

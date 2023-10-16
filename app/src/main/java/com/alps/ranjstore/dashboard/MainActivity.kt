@@ -1,24 +1,25 @@
 package com.alps.ranjstore.dashboard
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ExpandableListView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.alps.ranjstore.R
+import com.alps.ranjstore.activities.LoginActivity
+import com.alps.ranjstore.dashboard.ui.profile.ProfileActivity
 import com.alps.ranjstore.dashboard.ui.profile.ProfileUpdateActivity
 import com.alps.ranjstore.dashboard.ui.shop.CartActivity
-import com.alps.ranjstore.dashboard.ui.shop.NotificationActivity
 import com.alps.ranjstore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -27,6 +28,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    var linearoutdashfooter1: LinearLayout? =
+        null
+    var linearoutdashfooter2:LinearLayout? = null
+     var linearoutdashfooter4:LinearLayout? = null
+    var linearoutdashfooter5:LinearLayout? = null
+
+    private val _context: Context? = null
+    private val _listDataHeader: List<String>? = null // header titles
+
+
+    private val _listDataChild: HashMap<String, List<String>>? = null
+    var listView: ExpandableListView? = null
+    private val blueColorList: ColorStateList? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +50,61 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+
+        val blueColor = resources.getColor(R.color.menu_blue)
+        val grayColor = resources.getColor(R.color.gray_color)
+        val grayColorStateList = ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_checked),
+                intArrayOf(android.R.attr.state_enabled),
+                intArrayOf(android.R.attr.state_pressed),
+                intArrayOf(android.R.attr.state_focused),
+                intArrayOf(android.R.attr.state_pressed)
+            ), intArrayOf(
+                grayColor,
+                grayColor,
+                grayColor,
+                grayColor,
+                grayColor
+            )
+        )
+
+        val blueColorStateList = ColorStateList(
+            arrayOf(
+                intArrayOf(android.R.attr.state_checked),
+                intArrayOf(android.R.attr.state_enabled),
+                intArrayOf(android.R.attr.state_pressed),
+                intArrayOf(android.R.attr.state_focused),
+                intArrayOf(android.R.attr.state_pressed)
+            ), intArrayOf(
+                blueColor,
+                blueColor,
+                blueColor,
+                blueColor,
+                blueColor
+            )
+        )
+
+        linearoutdashfooter1 = findViewById(R.id.linearoutdashfooter1)
+        linearoutdashfooter2 = findViewById(R.id.linearoutdashfooter2)
+        linearoutdashfooter4 = findViewById(R.id.linearoutdashfooter4)
+         linearoutdashfooter5 = findViewById(R.id.linearoutdashfooter5)
+
+
+          linearoutdashfooter1!!.setOnClickListener(View.OnClickListener { v: View? ->
+              val intent = Intent(
+                  applicationContext,
+                  CartActivity::class.java
+              )
+              startActivity(intent)
+          })
+        linearoutdashfooter5!!.setOnClickListener(View.OnClickListener { v: View? ->
+            val intent = Intent(
+                applicationContext,
+                LoginActivity::class.java
+            )
+            startActivity(intent)
+        })
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -49,6 +118,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val intent = Intent(MainActivity@ this, ProfileUpdateActivity::class.java)
             startActivity(intent)
         }
+
+
+
 
 
        /* val navController = findNavController(R.id.nav_host_fragment_content_main)
