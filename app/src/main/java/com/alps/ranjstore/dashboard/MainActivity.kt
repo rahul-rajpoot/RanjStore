@@ -5,20 +5,16 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.alps.ranjstore.R
+import com.alps.ranjstore.activities.LoginActivity
 import com.alps.ranjstore.dashboard.ui.profile.ProfileUpdateActivity
-import com.alps.ranjstore.dashboard.ui.shop.CartActivity
-import com.alps.ranjstore.dashboard.ui.shop.NotificationActivity
 import com.alps.ranjstore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -27,7 +23,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-
+    var linearoutdashfooter1: LinearLayout? =
+        null
+    var linearoutdashfooter2: LinearLayout? = null
+    var linearoutdashfooter4: LinearLayout? = null
+    var linearoutdashfooter5: LinearLayout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +36,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        linearoutdashfooter1 = findViewById(R.id.linearoutdashfooter1)
+        linearoutdashfooter2 = findViewById(R.id.linearoutdashfooter2)
+        linearoutdashfooter4 = findViewById(R.id.linearoutdashfooter4)
+        linearoutdashfooter5 = findViewById(R.id.linearoutdashfooter5)
+        linearoutdashfooter1!!.setOnClickListener {
+            val intent = Intent(MainActivity@ this, ProfileUpdateActivity::class.java)
+            startActivity(intent)
+        }
+
+        linearoutdashfooter2!!.setOnClickListener {
+            val intent = Intent(MainActivity@ this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        linearoutdashfooter4!!.setOnClickListener {
+            val intent = Intent(MainActivity@ this, WhishListActivity::class.java)
+            startActivity(intent)
+        }
+
+        linearoutdashfooter5!!.setOnClickListener {
+            val intent = Intent(MainActivity@ this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -51,18 +73,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-       /* val navController = findNavController(R.id.nav_host_fragment_content_main)
+        /* val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)*/
+         appBarConfiguration = AppBarConfiguration(
+             setOf(
+                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+             ), drawerLayout
+         )
+         setupActionBarWithNavController(navController, appBarConfiguration)
+         navView.setupWithNavController(navController)*/
 
         val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, binding.appBarMain.toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this,
+            drawerLayout,
+            binding.appBarMain.toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -74,20 +100,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onCreateOptionsMenu(menu)
     }
 
-   /* override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.cart -> {
-                val intent = Intent(this@MainActivity, CartActivity::class.java)
-                startActivity(intent)
-                true
-            }
+    /* override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         return when (item.itemId) {
+             R.id.cart -> {
+                 val intent = Intent(this@MainActivity, CartActivity::class.java)
+                 startActivity(intent)
+                 true
+             }
 
-            R.id.notifications -> {
-                intent = Intent(this@MainActivity, NotificationActivity::class.java)
-                startActivity(intent)
-                return true
-            }
-            *//*R.id.action_exit ->{
+             R.id.notifications -> {
+                 intent = Intent(this@MainActivity, NotificationActivity::class.java)
+                 startActivity(intent)
+                 return true
+             }
+             *//*R.id.action_exit ->{
                 Toast.makeText(applicationContext, "click on exit", Toast.LENGTH_LONG).show()
                 return true
             }*//*
@@ -103,6 +129,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             super.onBackPressed()
         }
     }
+
     private fun displaySelectedScreen(itemId: Int) {
         when (itemId) {
             /* R.id.document -> {
@@ -120,7 +147,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 }
 
-    /*override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }*/
+/*override fun onSupportNavigateUp(): Boolean {
+    val navController = findNavController(R.id.nav_host_fragment_content_main)
+    return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+}*/

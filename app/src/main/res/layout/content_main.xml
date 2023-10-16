@@ -2125,13 +2125,13 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/viewprofiless2" />
+                            android:background="@drawable/baseline_shopping_cart_24" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="MyCart"
+                            android:text=" MyCart "
                             android:textColor="@color/white"
                             android:textSize="10sp"
                             android:textStyle="bold" />
@@ -2152,13 +2152,13 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/invitefriendshare" />
+                            android:background="@drawable/baseline_home_24" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="Home"
+                            android:text=" Home "
                             android:textColor="@color/white"
                             android:textSize="10sp"
                             android:textStyle="bold" />
@@ -2186,7 +2186,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="WhishList"
+                            android:text=" WhishList "
                             android:textColor="@color/white"
                             android:textSize="10sp"
                             android:textStyle="bold" />
@@ -2206,13 +2206,13 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center"
-                            android:background="@drawable/payoutreporticon2" />
+                            android:background="@drawable/baseline_person_pin_24" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="Account"
+                            android:text=" Account "
                             android:textColor="@color/white"
                             android:textSize="10sp"
                             android:textStyle="bold" />
