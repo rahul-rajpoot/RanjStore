@@ -9,4 +9,8 @@ interface ApiServices {
     @GET("getProfile/M/RS298HySRanj/1/SC58RANJS4542CRRE/ranjstore/12345")
      fun getProfile(): Call<ProfileDetails>
 
+    @GET("UserAuthentication/M/RS298HySRanj/1/SC58RANJS4542CRRE/ranjstore/12345548")
+    fun getLogin(): Call<ProfileDetails>
+
+    //https://api.ranjstore.com/DeveloperAPI/UserAuthentication/M/RS298HySRanj/1/SC58RANJS4542CRRE/ranjstore/12345548
 }

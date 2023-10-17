@@ -8,4 +8,8 @@ class ImplApiServices :ApiServices{
     override fun getProfile(): Call<ProfileDetails> {
         TODO("Not yet implemented")
     }
+
+    override fun getLogin(): Call<ProfileDetails> {
+        TODO("Not yet implemented")
+    }
 }

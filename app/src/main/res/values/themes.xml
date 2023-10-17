@@ -18,8 +18,9 @@
     <style name="Theme.RanjStore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
-    <style name="ProgressDialog" >
+    <style name="ProgressDialog">
 
-        <item name="colorPrimary">@color/colorPrimary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        -->
     </style>
 </resources>

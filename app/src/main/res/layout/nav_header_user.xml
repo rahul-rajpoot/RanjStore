@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="@dimen/nav_user_header_height"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/user_profile"
     android:gravity="bottom"
@@ -16,7 +16,6 @@
 
 
 
-<!--
 
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,28 +24,32 @@
         android:layout_height="96dp"
         android:layout_gravity="center"
         android:src="@drawable/sharukhan"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
         tools:ignore="MissingConstraints" />
 
--->
 
     <TextView
         android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginLeft="15dp"
+        android:gravity="center"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
-        android:textSize="20sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-   <!-- <TextView
+    <TextView
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/nav_header_subtitle"
         android:textAlignment="center"
-        android:text="@string/nav_header_subtitle" />-->
+        android:layout_marginLeft="15dp"
+
+
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+       />
 </LinearLayout>
