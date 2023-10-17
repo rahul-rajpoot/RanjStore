@@ -2,6 +2,8 @@ package com.alps.ranjstore.dashboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -12,12 +14,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
 import com.alps.ranjstore.R
 import com.alps.ranjstore.activities.LoginActivity
+import com.alps.ranjstore.adapter.ImageAdapter
 import com.alps.ranjstore.dashboard.ui.profile.ProfileUpdateActivity
 import com.alps.ranjstore.dashboard.ui.shop.CartActivity
 import com.alps.ranjstore.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
+import kotlin.math.abs
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +37,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     var linearoutdashfooter2: LinearLayout? = null
     var linearoutdashfooter4: LinearLayout? = null
     var linearoutdashfooter5: LinearLayout? = null
+
+    private lateinit var  viewPager2: ViewPager2
+    private lateinit var handler : Handler
+    private lateinit var imageList:ArrayList<Int>
+    private lateinit var adapter: ImageAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,10 +51,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
+        init()
+        setUpTransformer()
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                handler.removeCallbacks(runnable)
+                handler.postDelayed(runnable , 2000)
+            }
+        })
+
+
         linearoutdashfooter1 = findViewById(R.id.linearoutdashfooter1)
         linearoutdashfooter2 = findViewById(R.id.linearoutdashfooter2)
         linearoutdashfooter4 = findViewById(R.id.linearoutdashfooter4)
         linearoutdashfooter5 = findViewById(R.id.linearoutdashfooter5)
+
+
+
+
         linearoutdashfooter1!!.setOnClickListener {
             val intent = Intent(MainActivity@ this, CartActivity::class.java)
             startActivity(intent)
@@ -67,7 +96,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.navView.getHeaderView(0)
 
         val textusername = view.findViewById<TextView>(R.id.profile)
-        textusername.setText("Pramodkumarp6")
+        textusername.setText("My Menu")
         textusername.setOnClickListener {
             val intent = Intent(MainActivity@ this, ProfileUpdateActivity::class.java)
             startActivity(intent)
@@ -86,6 +115,56 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
     }
+    override fun onPause() {
+        super.onPause()
+
+        handler.removeCallbacks(runnable)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        handler.postDelayed(runnable , 4000)
+    }
+
+    private val runnable = Runnable {
+        viewPager2.currentItem = viewPager2.currentItem + 1
+    }
+    private fun setUpTransformer() {
+        val transformer = CompositePageTransformer()
+        transformer.addTransformer(MarginPageTransformer(40))
+        transformer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = 0.98f + r * 0.7f
+        }
+
+        viewPager2.setPageTransformer(transformer)
+
+    }
+    private fun init(){
+        viewPager2 = findViewById(R.id.viewPager2)
+        handler = Handler(Looper.myLooper()!!)
+        imageList = ArrayList()
+
+        imageList.add(R.drawable.ranj1)
+        imageList.add(R.drawable.ranj2)
+        imageList.add(R.drawable.ranj3)
+        imageList.add(R.drawable.ranj4)
+        imageList.add(R.drawable.ranj5)
+        /*   imageList.add(R.drawable.six)
+           imageList.add(R.drawable.seven)
+           imageList.add(R.drawable.eight)*/
+
+
+        adapter = ImageAdapter(imageList, viewPager2)
+
+        viewPager2.adapter = adapter
+        viewPager2.offscreenPageLimit = 5
+        viewPager2.clipToPadding = false
+        viewPager2.clipChildren = false
+        viewPager2.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
@@ -93,26 +172,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onCreateOptionsMenu(menu)
     }
 
-    /* override fun onOptionsItemSelected(item: MenuItem): Boolean {
-         return when (item.itemId) {
-             R.id.cart -> {
-                 val intent = Intent(this@MainActivity, CartActivity::class.java)
-                 startActivity(intent)
-                 true
-             }
 
-             R.id.notifications -> {
-                 intent = Intent(this@MainActivity, NotificationActivity::class.java)
-                 startActivity(intent)
-                 return true
-             }
-             *//*R.id.action_exit ->{
-                Toast.makeText(applicationContext, "click on exit", Toast.LENGTH_LONG).show()
-                return true
-            }*//*
-            else -> super.onOptionsItemSelected(item)
-        }
-    }*/
 
     override fun onBackPressed() {
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
@@ -140,7 +200,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 }
 
-/*override fun onSupportNavigateUp(): Boolean {
-    val navController = findNavController(R.id.nav_host_fragment_content_main)
-    return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-}*/
+

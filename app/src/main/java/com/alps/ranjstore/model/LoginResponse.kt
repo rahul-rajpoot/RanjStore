@@ -1,4 +1,3 @@
 package com.alps.ranjstore.com.alps.ranjstore.model
 
-class LoginResponse {
-}
+data  class LoginResponse(val status:Boolean,val message:String,val messageCode: String)

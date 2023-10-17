@@ -28,6 +28,14 @@
         android:theme="@style/Theme.RanjStore"
         tools:targetApi="31">
         <activity
+            android:name=".userAccount.UserDashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".userAccount.UserAccountActivity"
+            android:exported="false"
+            android:label="@string/title_activity_user_account"
+            android:theme="@style/Theme.RanjStore.NoActionBar" />
+        <activity
             android:name=".dashboard.WhishListActivity"
             android:exported="false" />
         <activity

@@ -51,16 +51,15 @@ class ResetPassword : AppCompatActivity() {
 
         resetpasswordBinding.restbt.setOnClickListener {
 
-            val dialog = Dialog(this)
+          /*  val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_loading)
             //  dialog.setCancelable(false)
             if(dialog.window !=null){
                 dialog!!.window!!.setBackgroundDrawable(ColorDrawable(0))
             }
-            dialog.show()
+            dialog.show()*/
             resetpassword()
         }
-
         resetViewModel.validate().observe(this, Observer {
             Toast.makeText(this, it, Toast.LENGTH_LONG).show()
         })

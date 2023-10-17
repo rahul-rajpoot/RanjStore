@@ -1,9 +1,7 @@
 package com.alps.ranjstore.activities
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -21,6 +19,7 @@ import com.alps.ranjstore.com.alps.ranjstore.viewmodel.login.LoginViewModelFacto
 import com.alps.ranjstore.dashboard.MainActivity
 import com.alps.ranjstore.databinding.ActivityLoginBinding
 import com.alps.ranjstore.repository.LoginRepository
+import com.alps.ranjstore.userAccount.UserDashBoardActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginBinding: ActivityLoginBinding
@@ -40,17 +39,17 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel =  ViewModelProvider(this, LoginViewModelFactory(LoginRepository(ImplApiServices()))).get(LoginViewModel::class.java)
         loginBinding.sumbit.setOnClickListener { view ->
-            val intent = Intent(this@LoginActivity, MainActivity::class.java)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            val intent = Intent(this@LoginActivity, UserDashBoardActivity::class.java)
+            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
 
-            val dialog = Dialog(this)
+            /*val dialog = Dialog(this)
             dialog.setContentView(R.layout.dialog_loading)
             //  dialog.setCancelable(false)
             if(dialog.window !=null){
                 dialog!!.window!!.setBackgroundDrawable(ColorDrawable(0))
             }
-            dialog.show()
+            dialog.show()*/
 
             login()
         }
