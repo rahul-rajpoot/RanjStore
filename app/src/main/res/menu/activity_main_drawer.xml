@@ -23,17 +23,17 @@
             android:icon="@drawable/walleticonss"
             android:title="Wallet Histry" />
 
-        <item
+       <!-- <item
             android:id="@+id/nav_slideshow2"
             android:icon="@drawable/financial_report"
             android:title="Finicial Report" />
-
-        <item
+-->
+       <!-- <item
             android:id="@+id/nav_slideshow5"
             android:icon="@drawable/profile_person_2_24"
             android:title="Profile" />
 
-
+-->
         <item
             android:id="@+id/nav_slideshow3"
             android:icon="@drawable/customer_support"

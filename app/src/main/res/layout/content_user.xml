@@ -5,7 +5,7 @@
         android:id="@+id/dashboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/dashbackimage"
+        android:background="#ffff"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".userAccount.UserDashBoardActivity"
@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="570dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="750dp"
             android:weightSum="2">
 
 
