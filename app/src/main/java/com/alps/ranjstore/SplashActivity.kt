@@ -3,6 +3,8 @@ package com.alps.ranjstore
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +22,7 @@ import com.alps.ranjstore.databinding.ActivitySplashBinding
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
-
+    var handler : Handler? =null
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
             IntroSlide(
@@ -56,6 +58,8 @@ class SplashActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicators(position)
+                handler!!.removeCallbacks(runnable)
+                handler!!.postDelayed(runnable , 2000)
             }
         })
 
@@ -82,9 +86,25 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
+    //*********Runnable Autu ImageSilder************************/
+    override fun onPause() {
+        super.onPause()
 
+        handler!!.removeCallbacks(runnable)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        handler!!.postDelayed(runnable , 2000)
+    }
+
+    private val runnable = Runnable {
+        binding.introSliderViewPager.currentItem = binding.introSliderViewPager.currentItem + 1
+    }
     private fun setupIndicators() {
         val indicators = arrayOfNulls<ImageView>(introSliderAdapter.itemCount)
+        handler = Handler(Looper.myLooper()!!)
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,

@@ -7,9 +7,11 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="252dp"
-        android:scaleType="fitXY"
+        android:layout_height="258dp"
+
+        android:scaleType="fitCenter"
         android:src="@drawable/ranj1"
+        android:background="@drawable/broder_image"
         tools:ignore="MissingConstraints" />
 
 

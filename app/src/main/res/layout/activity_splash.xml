@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:visibility="gone"
+        android:visibility="visible"
         android:backgroundTint="@color/color_primary"
-        android:text="SKIP"
+        android:text="Skip"
         android:textColor="@android:color/white" />
 
 
